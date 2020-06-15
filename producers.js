@@ -15,14 +15,6 @@ const start = new Date();
 const length = isNaN(Number(process.argv[2])) ? 1 : Number(process.argv[2]);
 
 const conns = Array.from({length}, (v, i) => new Comms(
-	{
-		host: process.env.AMQP_HOST,
-		scheme: 'amqps',
-		transport: 'tls',
-		port: Number(process.env.AMQP_PORT),
-		username: process.env.AMQP_UNAME,
-		password: process.env.AMQP_PWORD
-	},
 	{},
 	"stupid"
 ));
@@ -60,6 +52,13 @@ conns.forEach( (conn, idx) => {
 		console.log("CLOSED");
 	});
 
-	conn.connect();
+	conn.connect({
+		host: process.env.AMQP_HOST,
+		scheme: 'amqps',
+		transport: 'tls',
+		port: Number(process.env.AMQP_PORT),
+		username: process.env.AMQP_UNAME,
+		password: process.env.AMQP_PWORD
+	});
 
 });
