@@ -1,0 +1,4 @@
+AMQP_UNAME=<username>
+AMQP_PWORD=<password>
+AMQP_HOST=<hostname>
+AMQP_PORT=<port>
