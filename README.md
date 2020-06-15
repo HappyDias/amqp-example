@@ -1,6 +1,6 @@
-##### Rhea/AMQP test with an external TLS broker
+# Rhea/AMQP test with an external TLS broker
 
-###### General usage
+## General usage
 
 Starting the consumers:
 
